@@ -1,11 +1,9 @@
 import { useContext } from 'react'
-import { Header } from '../../components'
+import { Header } from '../components'
 
-import { GlobalContext } from '../../context/Provider'
+import { GlobalContext } from '../context/Provider'
 
 function Contacts() {
-  console.log(useContext(GlobalContext))
-
   return (
     <>
       <Header />

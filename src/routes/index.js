@@ -1,7 +1,9 @@
-import RegisterContainer from '../containers/Register'
-import LoginContainer from '../containers/Login'
-import ContactsContainer from '../containers/Contacts'
-import CreateContactContainer from '../containers/CreateContact'
+import {
+  RegisterContainer,
+  LoginContainer,
+  ContactsContainer,
+  CreateContactContainer,
+} from '../containers'
 
 const routes = [
   {
