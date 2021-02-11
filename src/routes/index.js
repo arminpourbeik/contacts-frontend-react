@@ -24,11 +24,6 @@ const routes = [
     component: CreateContactContainer,
     title: 'Create Contact',
   },
-  // {
-  //   path: '*',
-  //   component: NotFoundPath,
-  //   title: '404 Not Found',
-  // }
 ]
 
 export default routes

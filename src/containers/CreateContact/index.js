@@ -1,5 +1,12 @@
+import { Header } from '../../components'
+
 function CreateContact() {
-  return <h1>Hello from CreateContact component</h1>
+  return (
+    <>
+      <Header />
+      <h1>hello from create contact</h1>
+    </>
+  )
 }
 
 export default CreateContact
