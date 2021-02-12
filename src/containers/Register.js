@@ -1,14 +1,9 @@
 import { useEffect } from 'react'
-
-/* Register function */
 import { register } from '../context/actions/register'
-
-// Custom hook (form)
 import useForm from '../hooks/useForm'
-
 import { RegisterUI } from '../pages'
 
-function Register() {
+export default function Register() {
   useEffect(() => {
     /* Cleanup function */
     return () => {}
@@ -16,5 +11,3 @@ function Register() {
 
   return <RegisterUI form={useForm} />
 }
-
-export default Register

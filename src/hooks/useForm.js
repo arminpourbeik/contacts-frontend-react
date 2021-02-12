@@ -7,5 +7,12 @@ export default function useForm(initialValue) {
     setForm({ ...form, [name]: value })
   }
 
-  return [form, changeForm]
+  const registerFormValid =
+    !form.username?.length ||
+    !form.first_name?.length ||
+    !form.last_name?.length ||
+    !form.password?.length ||
+    !form.email?.length
+
+  return [form, changeForm, registerFormValid]
 }

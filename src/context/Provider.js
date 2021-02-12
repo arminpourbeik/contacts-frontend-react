@@ -1,9 +1,7 @@
 import { createContext, useReducer } from 'react'
 
-// Reducers
 import authReducer from './reducers/authReducer'
 import contactReducer from './reducers/contactReducer'
-// Initial states
 import authInitials from './initialStates/authInitials'
 import contactInitials from './initialStates/contactInitials'
 

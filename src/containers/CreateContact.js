@@ -1,6 +1,6 @@
 import { Header } from '../components'
 
-function CreateContact() {
+export default function CreateContact() {
   return (
     <>
       <Header />
@@ -8,5 +8,3 @@ function CreateContact() {
     </>
   )
 }
-
-export default CreateContact

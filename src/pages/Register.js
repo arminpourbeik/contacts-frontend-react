@@ -1,3 +1,4 @@
+import { Header } from '../components'
 import {
   Grid,
   Form,
@@ -7,10 +8,8 @@ import {
   Icon,
 } from 'semantic-ui-react'
 
-import { Header } from '../components'
-
-export default function Register({ form }) {
-  const [formState, setFormState] = form({
+function Register({ form }) {
+  const [formState, setFormState, registerFormValid] = form({
     first_name: '',
     last_name: '',
     email: '',
@@ -32,7 +31,6 @@ export default function Register({ form }) {
                 </SemanticUIHeader>
               </Grid.Column>
             </Grid>
-
             <Form>
               <Form.Field>
                 <Form.Input
@@ -81,7 +79,7 @@ export default function Register({ form }) {
                   onChange={setFormState}
                 />
               </Form.Field>
-              <Button fluid primary type='submit'>
+              <Button disabled={registerFormValid} fluid primary type='submit'>
                 Submit
               </Button>
             </Form>
@@ -91,3 +89,5 @@ export default function Register({ form }) {
     </>
   )
 }
+
+export default Register
