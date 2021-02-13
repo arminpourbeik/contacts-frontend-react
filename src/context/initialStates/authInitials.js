@@ -1,7 +1,8 @@
 const authInitials = {
   auth: {
     loading: false,
-    user: null,
+    data: null,
+    error: null,
   },
 }
 

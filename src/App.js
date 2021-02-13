@@ -20,7 +20,6 @@ function App() {
             render={(props) => <route.component {...props} />}
           />
         ))}
-        {/* Error 404 */}
         <Route path='*'>
           <Error />
         </Route>

@@ -1,7 +1,7 @@
 import { Link, useLocation } from 'react-router-dom'
 
 // Semantic UI
-import { Button, Icon, Menu } from 'semantic-ui-react'
+import { Button, HeaderContent, Icon, Menu } from 'semantic-ui-react'
 
 import logo from '../assets/images/logo.svg'
 

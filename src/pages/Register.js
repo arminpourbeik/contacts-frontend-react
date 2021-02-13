@@ -9,9 +9,16 @@ import {
 } from 'semantic-ui-react'
 
 function Register({ form }) {
-  const [formState, setFormState, registerFormValid] = form({
-    first_name: '',
-    last_name: '',
+  const [
+    formState,
+    setFormState,
+    registerFormValid,
+    onSubmit,
+    loading,
+    fieldErrors,
+  ] = form({
+    firstName: '',
+    lastName: '',
     email: '',
     password: '',
     username: '',
@@ -36,18 +43,30 @@ function Register({ form }) {
                 <Form.Input
                   label='First name'
                   placeholder='First Name'
-                  name='first_name'
-                  value={formState.first_name}
+                  name='firstName'
+                  value={formState.firstName}
                   onChange={setFormState}
+                  error={
+                    fieldErrors.first_name && {
+                      content: fieldErrors.username,
+                      pointing: 'below',
+                    }
+                  }
                 />
               </Form.Field>
               <Form.Field>
                 <Form.Input
                   label='Last name'
                   placeholder='Last Name'
-                  name='last_name'
-                  value={formState.last_name}
+                  name='lastName'
+                  value={formState.lastName}
                   onChange={setFormState}
+                  error={
+                    fieldErrors.last_name && {
+                      content: fieldErrors.last_name,
+                      pointing: 'below',
+                    }
+                  }
                 />
               </Form.Field>
               <Form.Field>
@@ -58,6 +77,12 @@ function Register({ form }) {
                   name='email'
                   value={formState.email}
                   onChange={setFormState}
+                  error={
+                    fieldErrors.email && {
+                      content: fieldErrors.email,
+                      pointing: 'below',
+                    }
+                  }
                 />
               </Form.Field>
               <Form.Field>
@@ -67,6 +92,12 @@ function Register({ form }) {
                   name='username'
                   value={formState.username}
                   onChange={setFormState}
+                  error={
+                    fieldErrors.username && {
+                      content: fieldErrors.username,
+                      pointing: 'below',
+                    }
+                  }
                 />
               </Form.Field>
               <Form.Field>
@@ -77,9 +108,22 @@ function Register({ form }) {
                   name='password'
                   value={formState.password}
                   onChange={setFormState}
+                  error={
+                    fieldErrors.password && {
+                      content: fieldErrors.password,
+                      pointing: 'below',
+                    }
+                  }
                 />
               </Form.Field>
-              <Button disabled={registerFormValid} fluid primary type='submit'>
+              <Button
+                disabled={registerFormValid || loading}
+                fluid
+                primary
+                type='submit'
+                onClick={onSubmit}
+                loading={loading}
+              >
                 Submit
               </Button>
             </Form>
