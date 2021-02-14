@@ -1,9 +1,15 @@
-import { useContext } from 'react'
+import { useEffect } from 'react'
+import { useHistory } from 'react-router-dom'
 import { Header } from '../components'
-
-import { GlobalContext } from '../context/Provider'
+import getContacts from '../context/actions/contacts/getContacts'
 
 function Contacts() {
+  const history = useHistory()
+
+  useEffect(() => {
+    getContacts(history)
+  }, [])
+
   return (
     <>
       <Header />
