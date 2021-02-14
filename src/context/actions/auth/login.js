@@ -8,6 +8,7 @@ import axiosInstance from '../../../helpers/axios'
 function login({ password, username }) {
   return async function (dispatch) {
     dispatch({ type: LOGIN_LOADING })
+
     try {
       const res = await axiosInstance.post('/auth/login/', {
         password,

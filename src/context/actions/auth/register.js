@@ -14,6 +14,7 @@ function register({
 }) {
   return async function (dispatch) {
     dispatch({ type: REGISTER_LOADING })
+
     try {
       const res = await axiosInstance.post('/auth/register/', {
         email,
@@ -24,7 +25,10 @@ function register({
       })
       dispatch({ type: REGISTER_SUCCESS, payload: res.data })
     } catch (err) {
-      dispatch({ type: REGISTER_ERROR, payload: err.response.data })
+      dispatch({
+        type: REGISTER_ERROR,
+        payload: err.response.data ? err.response.data : 'Error occurred',
+      })
     }
   }
 }

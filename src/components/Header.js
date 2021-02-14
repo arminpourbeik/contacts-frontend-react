@@ -1,7 +1,7 @@
 import { Link, useLocation } from 'react-router-dom'
 
 // Semantic UI
-import { Button, HeaderContent, Icon, Menu } from 'semantic-ui-react'
+import { Button, Icon, Menu } from 'semantic-ui-react'
 
 import logo from '../assets/images/logo.svg'
 
@@ -27,6 +27,11 @@ function Header() {
           <Menu.Item name='logout'>
             <Button color='red' basic icon>
               <Icon name='log out'></Icon> Logout
+            </Button>
+          </Menu.Item>
+          <Menu.Item name='login'>
+            <Button as={Link} to='/login' color='red' basic icon>
+              <Icon name='sign in'></Icon> login
             </Button>
           </Menu.Item>
 
