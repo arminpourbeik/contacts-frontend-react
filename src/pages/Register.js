@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { Header } from '../components'
 import {
   Grid,
@@ -126,6 +127,9 @@ function Register({ form }) {
               >
                 Submit
               </Button>
+              <Segment>
+                Already have an account? <Link to='/login'>Login</Link>
+              </Segment>
             </Form>
           </Segment>
         </Grid.Column>

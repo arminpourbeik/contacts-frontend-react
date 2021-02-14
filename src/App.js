@@ -19,11 +19,13 @@ import { isAuthenticated } from './utils/isAuthenticated'
 const RenderRoutes = (route) => {
   if (route.needsAuth && !isAuthenticated()) return <Redirect to='/login' />
 
+  document.title = route.title || 'Contacts'
+
   return (
     <Route
       path={route.path}
       exact
-      render={(props) => <route.component {...props} />}
+      render={(routeProps) => <route.component {...routeProps} />}
     />
   )
 }

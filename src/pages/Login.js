@@ -1,4 +1,8 @@
+import { Link } from 'react-router-dom'
+
 import { Header } from '../components'
+
+// Semantic UI
 import {
   Grid,
   Form,
@@ -72,6 +76,9 @@ function Login({ form }) {
               >
                 Submit
               </Button>
+              <Segment>
+                Need an account? <Link to='/register'>Register</Link>
+              </Segment>
             </Form>
           </Segment>
         </Grid.Column>
