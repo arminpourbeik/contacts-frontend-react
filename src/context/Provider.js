@@ -7,7 +7,7 @@ import contactInitials from './initialStates/contactInitials'
 
 export const GlobalContext = createContext()
 
-export default function GlobalProvider({ children }) {
+function GlobalProvider({ children }) {
   const [authState, authDispatch] = useReducer(authReducer, authInitials)
   const [contactState, contactDispatch] = useReducer(
     contactReducer,
@@ -22,3 +22,5 @@ export default function GlobalProvider({ children }) {
     </GlobalContext.Provider>
   )
 }
+
+export default GlobalProvider

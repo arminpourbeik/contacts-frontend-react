@@ -1,11 +1,9 @@
 import { useState, useContext, useEffect } from 'react'
-
 import { useHistory } from 'react-router-dom'
-
 import { login } from '../../context/actions/auth/login'
 import { GlobalContext } from '../../context/Provider'
 
-export default function useForm(initialValue) {
+function useForm(initialValue) {
   const [form, setForm] = useState(initialValue)
 
   const history = useHistory()
@@ -34,3 +32,5 @@ export default function useForm(initialValue) {
 
   return [form, changeForm, loginFormValid, onSubmit, loading, error]
 }
+
+export default useForm

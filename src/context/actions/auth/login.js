@@ -18,7 +18,6 @@ function login({ password, username }) {
       localStorage.refresh = res.data.refresh
       dispatch({ type: LOGIN_SUCCESS, payload: res.data })
     } catch (err) {
-      console.log(err.response)
       dispatch({
         type: LOGIN_ERROR,
         payload: err.response ? err.response.data : 'COULD NOT CONNECT',

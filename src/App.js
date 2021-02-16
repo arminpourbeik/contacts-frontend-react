@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom'
 import Error from './components/Error'
 
-// Semantic UI css
+// Semantic UI CSS
 import 'semantic-ui-css/semantic.min.css'
 
 // Routes
