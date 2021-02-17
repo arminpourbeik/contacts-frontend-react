@@ -27,8 +27,8 @@ function Contacts({ contacts }) {
         )}
         {contacts.data.length > 0 && (
           <List>
-            {contacts.data.map((contact) => (
-              <List.Item>
+            {contacts.data.map((contact, index) => (
+              <List.Item key={index}>
                 <List.Content floated='right'>
                   <span>{contact.phone_number}</span>
                 </List.Content>
