@@ -25,20 +25,22 @@ function Header() {
       </Menu.Item>
 
       {pathname === '/' && (
-        <Menu.Item name='create' position='right'>
-          <Button as={Link} to='/create' primary basic icon>
-            <Icon name='add'></Icon> Create
-          </Button>
-        </Menu.Item>
-      )}
-
-      {pathname === '/' && (
         <>
+          <Menu.Item name='create' position='right'>
+            <Button as={Link} to='/create' primary basic icon>
+              <Icon name='add'></Icon> Create
+            </Button>
+          </Menu.Item>
           <Menu.Item name='logout' onClick={handleLogout}>
             <Button color='red' basic icon>
               <Icon name='log out'></Icon> Logout
             </Button>
           </Menu.Item>
+        </>
+      )}
+
+      {!pathname === '/' && (
+        <>
           <Menu.Item name='login'>
             <Button as={Link} to='/login' color='red' basic icon>
               <Icon name='sign in'></Icon> login
