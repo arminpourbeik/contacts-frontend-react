@@ -27,7 +27,8 @@ function useForm(initialValue) {
 
   useEffect(() => {
     if (data?.access) history.push('/')
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // TODO: fix the clean up function
+    return () => {}
   }, [data])
 
   return [form, changeForm, loginFormValid, onSubmit, loading, error]

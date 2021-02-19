@@ -7,6 +7,12 @@ import {
 
 const routes = [
   {
+    path: '/create',
+    component: CreateContactContainer,
+    title: 'Create Contact',
+    needsAuth: false,
+  },
+  {
     path: '/register',
     component: RegisterContainer,
     title: 'Register',
@@ -22,12 +28,6 @@ const routes = [
     path: '/',
     component: ContactsContainer,
     title: 'Contacts',
-    needsAuth: true,
-  },
-  {
-    path: '/create',
-    component: CreateContactContainer,
-    title: 'Create Contact',
     needsAuth: true,
   },
 ]

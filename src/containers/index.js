@@ -5,7 +5,7 @@ import RegisterContainer from './Register/Register'
 
 export {
   ContactsContainer,
-  CreateContactContainer,
   LoginContainer,
   RegisterContainer,
+  CreateContactContainer,
 }

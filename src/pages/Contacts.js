@@ -1,8 +1,7 @@
-import { Header } from '../../components'
-// Semantic UI
+import { Header } from '../components'
 import { List, Image, Placeholder, Container } from 'semantic-ui-react'
 
-import profilePicPlaceholder from '../../assets/user.jpg'
+import profilePicPlaceholder from '../assets/user.jpg'
 
 function Contacts({ contacts }) {
   const { loading } = contacts

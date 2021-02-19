@@ -6,6 +6,7 @@ import { Button, Icon, Menu } from 'semantic-ui-react'
 import { GlobalContext } from '../context/Provider'
 import logout from '../context/actions/auth/logout'
 import logo from '../assets/images/logo.svg'
+import { isAuthenticated } from '../utils/isAuthenticated'
 
 function Header() {
   const { pathname } = useLocation()
@@ -24,16 +25,16 @@ function Header() {
         <img src={logo} alt='logo' />
       </Menu.Item>
 
-      {pathname === '/' && (
+      {isAuthenticated() && (
         <>
-          <Menu.Item name='create' position='right'>
-            <Button as={Link} to='/create' primary basic icon>
-              <Icon name='add'></Icon> Create
-            </Button>
-          </Menu.Item>
-          <Menu.Item name='logout' onClick={handleLogout}>
+          <Menu.Item name='logout' onClick={handleLogout} position='right'>
             <Button color='red' basic icon>
               <Icon name='log out'></Icon> Logout
+            </Button>
+          </Menu.Item>
+          <Menu.Item name='create'>
+            <Button as={Link} to='/create' primary basic icon>
+              <Icon name='add'></Icon> Create
             </Button>
           </Menu.Item>
         </>

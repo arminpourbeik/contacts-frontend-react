@@ -1,20 +1,14 @@
-// React router dom
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Redirect,
 } from 'react-router-dom'
-import Error from './components/Error'
-
-// Semantic UI CSS
+import { Error } from './components'
 import 'semantic-ui-css/semantic.min.css'
-
-// Routes
 import routes from './routes'
-
-// Utils
 import { isAuthenticated } from './utils/isAuthenticated'
+import './styles/App.scss'
 
 const RenderRoutes = (route) => {
   if (route.needsAuth && !isAuthenticated()) return <Redirect to='/login' />
@@ -24,7 +18,7 @@ const RenderRoutes = (route) => {
   return (
     <Route
       path={route.path}
-      exact
+      exact={true}
       render={(routeProps) => <route.component {...routeProps} />}
     />
   )
@@ -37,7 +31,7 @@ function App() {
         {routes.map((route, index) => (
           <RenderRoutes {...route} key={index} />
         ))}
-        <Route path='*'>
+        <Route path='*' exact>
           <Error />
         </Route>
       </Switch>

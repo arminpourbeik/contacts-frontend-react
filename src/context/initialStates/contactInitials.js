@@ -7,6 +7,7 @@ const contactInitials = {
   addContact: {
     loading: false,
     error: null,
+    data: null,
   },
 }
 
