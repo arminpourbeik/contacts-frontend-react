@@ -42,6 +42,12 @@ function CreateContactContainer() {
     }
   }, [data])
 
+  const isFormHalfFilled =
+    Object.values(form).filter((item) => item && item !== '')?.length > 0 &&
+    !data
+
+  // console.log(isFormHalfFilled)
+
   return (
     <CreateContact
       form={form}
@@ -49,6 +55,7 @@ function CreateContactContainer() {
       onSubmit={onSubmit}
       loading={loading}
       formIsNotValid={formIsNotValid}
+      isFormHalfFilled={isFormHalfFilled}
     />
   )
 }
